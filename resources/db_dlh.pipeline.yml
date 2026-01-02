@@ -1,0 +1,13 @@
+# The main pipeline for db_dlh
+resources:
+  pipelines:
+    db_dlh_pipeline:
+      name: db_dlh_pipeline
+      catalog: workspace
+      schema: db_dlh_${bundle.target}
+      libraries:
+        - notebook:
+            path: ../src/dlt_pipeline.ipynb
+
+      configuration:
+        bundle.sourcePath: ${workspace.file_path}/src

@@ -1,0 +1,24 @@
+[project]
+name = "db_dlh"
+version = "0.1.0"
+description = "This is a small project that can run on the Databricks free edition"
+authors = [
+    {name = "telmen87",email = "telmen87@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12,<3.13.dev0"
+dependencies = [
+    "databricks (>=0.2,<0.3)",
+    "databricks-connect (>=18.0.0,<19.0.0)",
+    "requests (>=2.32.5,<3.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+include = ["src/**"]
+
+[project.scripts]
+db_dlh = "db_dlh.main:main"
