@@ -1,0 +1,18 @@
+resources:
+  jobs:
+    ingestion:
+      name: ingestion
+      queue:
+        enabled: true
+
+      tasks:
+        - task_key: notebook_task
+          notebook_task:
+            notebook_path: ../src/ingestion_notebook.ipynb
+      email_notifications:
+        on_failure:
+          - telmen87@gmail.com
+      schedule:
+        pause_status: 'PAUSED'
+        quartz_cron_expression: "0 0 * ? * *"
+        timezone_id: UTC
